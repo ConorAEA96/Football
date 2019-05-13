@@ -13,7 +13,7 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        axios.get('https://conor-prem-league-prediction.herokuapp.com/')
+        axios.get('https://serene-meadow-33873.herokuapp.com/')
             .then(response => {
                 console.log(response.data);
                 this.setState({ summary: response.data, is_loaded: true });
@@ -56,7 +56,7 @@ class Standings extends Component {
     }
 
     componentDidMount() {
-        axios.get('https://conor-prem-league-prediction.herokuapp.com/standings')
+        axios.get('https://serene-meadow-33873.herokuapp.com/standings')
             .then(response => {
                 let res = response.data;
                 let matrix =[];
@@ -166,7 +166,7 @@ class Results extends Component {
     }
 
     componentDidMount() {
-        axios.get('https://conor-prem-league-prediction.herokuapp.com/results')
+        axios.get('https://serene-meadow-33873.herokuapp.com/results')
             .then(response => {
                 this.setState({ posts: response.data.reverse(), is_loaded: true });
             });
@@ -233,7 +233,7 @@ class Predictions extends Component {
     }
 
     componentDidMount() {
-        axios.get('https://conor-prem-league-prediction.herokuapp.com/predictions')
+        axios.get('https://serene-meadow-33873.herokuapp.com/predictions')
             .then(response => {
                 this.setState({ posts: response.data, is_loaded: true });
             });
@@ -279,7 +279,7 @@ class App extends Component {
                     <div>
                         <div className='header'>
                             <img className='header_logo' src={logo} alt='logo'></img>
-                            <h1>English Premier League Predictor</h1>
+                            <h1>Football Predictor</h1>
                         </div>
                         <div className="navigator">
                             <Link to="/">
@@ -300,8 +300,8 @@ class App extends Component {
                             <Switch>
                                 <Route path="/" exact component={Home} />
                                 <Route path="/predictions" component={Predictions} />
-                                <Route path="/results" component={Fixtures & Results} />
-                                <Route path="/standings" component={Table} />
+                                <Route path="/results" component={Results} />
+                                <Route path="/standings" component={Standings} />
                             </Switch>
                         </div>
                     </div>
