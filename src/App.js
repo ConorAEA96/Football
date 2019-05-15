@@ -13,7 +13,7 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        axios.get('https://serene-meadow-33873.herokuapp.com/')
+        axios.get('https://conor-prem-league-prediction.heroku.com/summary')
             .then(response => {
                 console.log(response.data);
                 this.setState({ summary: response.data, is_loaded: true });
@@ -26,9 +26,8 @@ class Home extends Component {
                 <h2 className='content_header'>Summary</h2>
                 {this.state.is_loaded && 
                     <div>
-                        <p>Most likely to win the season: <b>{this.state.summary.winner}</b></p>
-                        <p>Prediction Accuracy: <b>{Math.round(this.state.summary.accuracy * 10000) / 100}%</b></p>
-                        <p>Last Update: <b>{this.state.summary.time}</b></p>
+                        <p>The team most likely to win the league: <b>{this.state.summary.winner}</b></p>
+                        <p>The accuracy of the prediction: <b>{Math.round(this.state.summary.accuracy * 10000) / 100}%</b></p>
                     </div>
                 }
                 <br/>
@@ -56,7 +55,7 @@ class Standings extends Component {
     }
 
     componentDidMount() {
-        axios.get('https://serene-meadow-33873.herokuapp.com/standings')
+        axios.get('https://conor-prem-league-prediction.herokuapp.com/rankings')
             .then(response => {
                 let res = response.data;
                 let matrix =[];
@@ -166,7 +165,7 @@ class Results extends Component {
     }
 
     componentDidMount() {
-        axios.get('https://serene-meadow-33873.herokuapp.com/results')
+        axios.get('https://conor-prem-league-prediction.herokuapp.com/results')
             .then(response => {
                 this.setState({ posts: response.data.reverse(), is_loaded: true });
             });
@@ -233,7 +232,7 @@ class Predictions extends Component {
     }
 
     componentDidMount() {
-        axios.get('https://serene-meadow-33873.herokuapp.com/predictions')
+        axios.get('https://conor-prem-league-prediction.herokuapp.com/predictions')
             .then(response => {
                 this.setState({ posts: response.data, is_loaded: true });
             });

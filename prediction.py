@@ -291,7 +291,7 @@ def getCLF(finalFilePath, model_confidence_csv_path, clf_file, recalculate=True)
         df = pd.DataFrame(avg_dict, index=[0])
     df.to_csv(model_confidence_csv_path, index=False)
 
-    #    Saves the classifier using pickle module
+    #    Saves the classifier using joblib module
     if recalculate:
         joblib.dump(best_clf, clf_file)
     #   Return the best classifier

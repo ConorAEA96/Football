@@ -33,6 +33,9 @@ def team_name_conversion(teams):
     return team_name_map[teams]
 
 
+'''This function gets data for the upcoming fixtures and results of the English Premier League'''
+
+
 def get_current_fixtures(raw_data_current_path):
     url = "http://api.football-data.org/v2/competitions/"
     authentication = "524232deb6634c2badc78820af20de35"
@@ -40,17 +43,18 @@ def get_current_fixtures(raw_data_current_path):
 
     print("Retrieving fixtures and results for the year...")
 
-    england_area_code = 2072
-    competition_url = url + "?areas=" + str(england_area_code)
+    area_code_england = 2072
+    competition_url = url + "?areas=" + str(area_code_england)
+
     request = requests.get(competition_url, headers=headers).json()
 
     premier_league_data = [x for x in request['competitions'] if x['name'] == 'Premier League'][0]
-    premier_league_id = premier_league_data['id']
+    league_id = premier_league_data['id']
 
-    matches_url = url + str(premier_league_id) + "/matches"
-    match_data = requests.get(matches_url, headers=headers).json()['matches']
+    matches = url + str(league_id) + "/matches"
+    match_data = requests.get(matches, headers=headers).json()['matches']
 
-    matches_dict = {
+    matches_dictionary = {
         'Date': [match['utcDate'].split('T')[0] for match in match_data],
         'HomeTeam': [team_name_conversion(match['homeTeam']['name']) for match in match_data],
         'AwayTeam': [team_name_conversion(match['awayTeam']['name']) for match in match_data],
@@ -62,6 +66,6 @@ def get_current_fixtures(raw_data_current_path):
                 match in match_data]
     }
 
-    df = pd.DataFrame(matches_dict)
-    df.to_csv(raw_data_current_path, index=False)
+    data_frame = pd.DataFrame(matches_dictionary)
+    data_frame.to_csv(raw_data_current_path, index=False)
 
