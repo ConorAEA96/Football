@@ -2,8 +2,19 @@
 Applying Machine Learning Techniques to Predict the Outcome of Football Matches
 
 
-[Demo App](https://conor-prem-league-predictor.herokuapp.com/)
+[Demo App](http://conor-prem-league-predictor.heroku.com/)
 
+#### The libraries needed for this program to run
+-Flask 
+-pandas
+-numpy
+-selenium
+-IPython
+-sklearn
+-xgboost
+-scipy
+-requests
+-gunicorn
 
 &nbsp;
 &nbsp;
@@ -12,24 +23,22 @@ Applying Machine Learning Techniques to Predict the Outcome of Football Matches
 ## To Run
 > python3 model.py
 
-***Warning***: Few python packages required to run the script. Install them all, or use a 3rd party IDE (such as spyder) that pre-installs these packages by default.
-
 
 &nbsp;
 &nbsp;
 
-## Scripts
+## Script
 #### 1. clean_data.py
 - Includes necessary helper functions to process raw data
 #### 2. current_fixtures
-- Collects and adds more details to the processed raw data
-- current/past standings, goals for/against/differences, etc.
+- This collects and adds more data to the raw data.
+- current standings and goals for and against etc.
 #### 3. current_form
-- Collects the latest match results
+- This collects the current fixtures and match results. 
 #### 4. standings.py
-- Calculate league points and generate standings
+- This calculates the league points and generates standings
 #### 5. sf_scraper.py
-- Scrape overall team stat from FIFA
+- Scrapes the overall team data from fifa
 #### 6. prediction.py
 - With using processed data, train a ML model to predict future results
 #### 7. model.py

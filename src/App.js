@@ -13,7 +13,7 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        axios.get('https://conor-prem-league-prediction.heroku.com/summary')
+        axios.get('https://epl-server.herokuapp.com/summary')
             .then(response => {
                 console.log(response.data);
                 this.setState({ summary: response.data, is_loaded: true });
@@ -23,18 +23,13 @@ class Home extends Component {
     render() {
         return (
             <div className='home'>
-                <h2 className='content_header'>Summary</h2>
-                {this.state.is_loaded && 
-                    <div>
-                        <p>The team most likely to win the league: <b>{this.state.summary.winner}</b></p>
-                        <p>The accuracy of the prediction: <b>{Math.round(this.state.summary.accuracy * 10000) / 100}%</b></p>
-                    </div>
-                }
                 <br/>
-                <h2 className='content_header'>Help</h2>
-                <p>If you would like to look at match predictions, <b><a href='/predictions'>Click Predictions</a></b>.</p>
-                <p>If you would like to look at previous matches of the current season, <b><a href='/results'>Click Results</a></b>.</p>
+                <h2 className='content_header'>Home</h2>
+                <p>For head-to-head match predictions, <b><a href='/predictions'>Click Predictions</a></b>.</p>
+                <p>For the previous matches this current season, <b><a href='/results'>Click Results</a></b>.</p>
                 <p>If you would like to look at the current standing as well as predicted standings, <b><a href='/standings'>Click Standings</a></b>.</p>
+                <p>Here is a link to my Github, <b><a href='https://github.com/ConorAEA96'>Github</a></b>.</p>
+                <p>Here is a link to my LinkedIn, <b><a href='https://www.linkedin.com/in/conor-andrew-52a310159/'>LinkedIn</a></b>.</p>
             </div>
         );
     }
@@ -55,7 +50,7 @@ class Standings extends Component {
     }
 
     componentDidMount() {
-        axios.get('https://conor-prem-league-prediction.herokuapp.com/rankings')
+        axios.get('https://epl-server.herokuapp.com/rankings')
             .then(response => {
                 let res = response.data;
                 let matrix =[];
@@ -87,7 +82,7 @@ class Standings extends Component {
                     }
                     res = new_res;
                 }
-                
+
                 res.forEach(function(standing) {
                     let standing_arr = [];
 
@@ -117,7 +112,7 @@ class Standings extends Component {
     render() {
         return (
             <div>
-                <h2 className='content_header'>Table</h2>
+                <h2 className='content_header'>Standings</h2>
                 <div>
                     <Chart
                         chartType="LineChart"
@@ -165,7 +160,7 @@ class Results extends Component {
     }
 
     componentDidMount() {
-        axios.get('https://conor-prem-league-prediction.herokuapp.com/results')
+        axios.get('https://epl-server.herokuapp.com/previous_results')
             .then(response => {
                 this.setState({ posts: response.data.reverse(), is_loaded: true });
             });
@@ -174,7 +169,7 @@ class Results extends Component {
     render() {
         return (
             <div>
-                <h2 className='content_header'>Fixtures & Results</h2>
+                <h2 className='content_header'>Results</h2>
                 {this.state.posts.map((post, key) =>
                     <PreviousMatch key={key} post={post}></PreviousMatch>
                 )}
@@ -232,7 +227,7 @@ class Predictions extends Component {
     }
 
     componentDidMount() {
-        axios.get('https://conor-prem-league-prediction.herokuapp.com/predictions')
+        axios.get('https://epl-server.herokuapp.com/predictions')
             .then(response => {
                 this.setState({ posts: response.data, is_loaded: true });
             });
@@ -278,7 +273,7 @@ class App extends Component {
                     <div>
                         <div className='header'>
                             <img className='header_logo' src={logo} alt='logo'></img>
-                            <h1>Football Predictor</h1>
+                            <h1>Final Year Project - English Premier League Predictor</h1>
                         </div>
                         <div className="navigator">
                             <Link to="/">
@@ -312,6 +307,3 @@ class App extends Component {
 
 
 export default App;
-
-
-

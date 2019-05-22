@@ -2,11 +2,14 @@ import os.path
 import json
 import pandas as pd
 import xgboost as xgb
+import joblib
 from IPython import get_ipython
 from sklearn.preprocessing import scale
 from sklearn.model_selection import KFold
 from time import time
-from sklearn.metrics import f1_score
+from sklearn.metrics import f1_score, precision_score, recall_score, confusion_matrix, \
+    classification_report, accuracy_score, auc, roc_auc_score, roc_curve
+from sklearn.externals import joblib
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.svm import SVC
@@ -19,9 +22,20 @@ from sklearn.linear_model import SGDClassifier
 
 from sklearn.model_selection import GridSearchCV
 from sklearn.model_selection import RandomizedSearchCV
-import joblib
+from sklearn.model_selection import cross_val_score
+
+from sklearn.datasets import make_classification
+# from matplotlib import pyplot
+from sklearn.model_selection import train_test_split
+
+from sklearn import metrics
+from sklearn.metrics import make_scorer
+from scipy.stats import expon
 from clean_data import make_directory
+
+from sklearn.datasets import make_classification
 import warnings
+
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 ipy = get_ipython()
@@ -34,8 +48,8 @@ def prepare_data(data, drop_na=True):
     data = data.drop(columns=['Date', 'HomeTeam', 'AwayTeam'])
     data = data.drop(columns=['FTHG', 'FTAG'])
     data = data.drop(columns=['HT_goal_for', 'AT_goal_for', 'HT_goal_against', 'AT_goal_against'])
-    #data = data.drop(columns=['HT_3_win_streak', 'HT_5_win_streak', 'HT_3_lose_Streak', 'HT_5_lose_Streak',
-     #                         'AT_3_win_streak', 'AT_5_win_streak', 'AT_3_lose_Streak', 'AT_5_lose_Streak'])
+    # data = data.drop(columns=['HT_3_win_streak', 'HT_5_win_streak', 'HT_3_lose_Streak', 'HT_5_lose_Streak',
+    #                         'AT_3_win_streak', 'AT_5_win_streak', 'AT_3_lose_Streak', 'AT_5_lose_Streak'])
 
     data = data.loc[data['HT_match_played'] == data['HT_match_played']]
 
@@ -46,7 +60,7 @@ def prepare_data(data, drop_na=True):
 
     # Columns that are not normalized: (Ordinal, Categorical)
     # [FTR, HT_match_played, AT_match_played, HT_3_win_streak, HT_5_win_streak,
-    # [HT_3_lose_Streak, HT_5_lose_Streak, AT_3_win_streak, AT_5_win_streak, AT_3_lose_Streak, AT_5_lose_Streak]
+    # HT_3_lose_Streak, HT_5_lose_Streak, AT_3_win_streak, AT_5_win_streak, AT_3_lose_Streak, AT_5_lose_Streak]
 
     # Columns that are normalised: (Continuous variables)
     normalized_columns = ['HomeOVA', 'AwayOVA', 'OVA_diff']
@@ -77,7 +91,7 @@ def train_classifier(clf, x_train, y_train):
 
 
 def predict_labels(clf, features, target):
-    # This function makes a prediction using a fit classifier based on F1 score.
+    # This function makes a prediction using a fit classifier based on F! score.
 
     # A clocked is started - it then makes a prediction - stops the clock.
     start = time()
@@ -100,13 +114,13 @@ def train_and_predict(clf, x_train, y_train, x_test, y_test):
 
     # Print the results of prediction for both training and testing
     f1, acc, confidence, _ = predict_labels(clf, x_train, y_train)
-    print("F1 score and accuracy score for training set: {} , {}.".format(f1, acc))
-    print("Confidence score for training set: {}.".format(confidence))
+    # print("F1 score and accuracy score for training set: {} , {}.".format(f1, acc))
+    # print("Confidence score for training set: {}.".format(confidence))
     print()
 
     f1, acc, confidence, predictions = predict_labels(clf, x_test, y_test)
     print("F1 score and accuracy score for test set: {} , {}.".format(f1, acc))
-    print("Confidence score for test set: {}.".format(confidence))
+    # print("Confidence score for test set: {}.".format(confidence))
     print()
 
     return confidence, predictions
@@ -189,8 +203,8 @@ def getCLF(finalFilePath, model_confidence_csv_path, clf_file, recalculate=True)
         LogisticRegression(penalty='l2', solver='newton-cg', multi_class='ovr',
                            C=0.1, warm_start=True),
         LogisticRegression(penalty='l2', solver='lbfgs', multi_class='multinomial',
-                            C=0.4, warm_start=False),
-        #SVC
+                           C=0.4, warm_start=False),
+        # SVC
         SVC(probability=True),
         SVC(C=0.3, class_weight=None, decision_function_shape='ovo', degree=1,
             kernel='rbf', probability=True, shrinking=True, tol=0.0005),
@@ -210,21 +224,21 @@ def getCLF(finalFilePath, model_confidence_csv_path, clf_file, recalculate=True)
         SGDClassifier()
     ]
 
-    #clf_L = LogisticRegression()
-    #parameters_L = {'penalty': ['l2'],
+    # clf_L = LogisticRegression()
+    # parameters_L = {'penalty': ['l2'],
     #                'solver': ['lbfgs', 'newton-cg', 'sag'],
     #                'multi_class': ['ovr', 'multinomial'],
     #                'C': [x * 0.1 + 0.1 for x in range(10)],
     #                'warm_start': [True, False],
     #                'fit_intercept': [True, False],
     #                'class_weight': ['balanced', None]}
-    #f1_scorer_l = make_scorer(f1_score, labels=['H', 'D', 'A'], average='micro')
-    #clf_L = get_grid_clf(clf_L, f1_scorer_l, parameters_L, x_all, y_all)
-    #classifiers.append(clf_L)
+    # f1_scorer_l = make_scorer(f1_score, labels=['H', 'D', 'A'], average='micro')
+    # clf_L = get_grid_clf(clf_L, f1_scorer_l, parameters_L, x_all, y_all)
+    # classifiers.append(clf_L)
 
     ##    SVC
-    #clf_L = SVC()
-    #parameters_L = {
+    # clf_L = SVC()
+    # parameters_L = {
     #    'C': [x * 0.01 + 0.27 for x in range(5)],
     #    'kernel': ['linear', 'poly', 'rbf', 'sigmoid'],
     #    'degree': [x + 1 for x in range(3)],
@@ -232,29 +246,29 @@ def getCLF(finalFilePath, model_confidence_csv_path, clf_file, recalculate=True)
     #    'tol': [x * 0.0005 + 0.0005 for x in range(3)],
     #    'class_weight': ['balanced', None],
     #    'decision_function_shape': ['ovo', 'ovr']
-    #}
-    #f1_scorer_l = make_scorer(f1_score, labels=['H', 'D', 'A'], average='micro')
-    #clf_L = get_grid_clf(clf_L, f1_scorer_l, parameters_L, x_all, y_all)
-    #classifiers.append(clf_L)
+    # }
+    # f1_scorer_l = make_scorer(f1_score, labels=['H', 'D', 'A'], average='micro')
+    # clf_L = get_grid_clf(clf_L, f1_scorer_l, parameters_L, x_all, y_all)
+    # classifiers.append(clf_L)
 
     ##    XGBoost
-    #clf_L = xgb.XGBClassifier()
-    #parameters_L = {
-    #    'learning_rate': [0.01],
-    #    'n_estimators': [1000],
-    #    'max_depth': [2],
-    #    'min_child_weight': [5],
-    #    'gamma': [0],
-    #    'subsample': [0.8],
-    #    'colsample_bytree': [0.7],
-    #    'scale_pos_weight': [0.8],
-    #    'reg_alpha': [1e-5],
-    #    'booster': ['gbtree'],
-    #    'objective': ['multi:softprob']
-    #}
-    #f1_scorer_l = make_scorer(f1_score, labels=['H', 'D', 'A'], average='micro')
-    #clf_L = get_grid_clf(clf_L, f1_scorer_l, parameters_L, x_all, y_all)
-    #classifiers.append(clf_L)
+    clf_L = xgb.XGBClassifier()
+    parameters_L = {
+        'learning_rate': [0.01],
+        'n_estimators': [1000],
+        'max_depth': [2],
+        'min_child_weight': [5],
+        'gamma': [0],
+        'subsample': [0.8],
+        'colsample_bytree': [0.7],
+        'scale_pos_weight': [0.8],
+        'reg_alpha': [1e-5],
+        'booster': ['gbtree'],
+        'objective': ['multi:softprob']
+    }
+    f1_scorer_l = make_scorer(f1_score, labels=['H', 'D', 'A'], average='micro')
+    clf_L = get_grid_clf(clf_L, f1_scorer_l, parameters_L, x_all, y_all)
+    classifiers.append(clf_L)
 
     # We are going to record accuracies of each classifier prediction iteration
     len_classifiers = len(classifiers)
@@ -343,7 +357,7 @@ def predict_next_round(clf, final_path, current_raw_cleaned_path, statistics=Fal
                 df_to_predict.at[index + len_df, 'prob_' + outcome] = prob
 
             print("{:20} {:20} {:20} {}".format(home_team, away_team, home_team
-                                                if result == "H" else away_team, max(pred_prob)))
+            if result == "H" else away_team, max(pred_prob)))
 
         if statistics:
             if first:
@@ -365,8 +379,3 @@ def predict_next_round(clf, final_path, current_raw_cleaned_path, statistics=Fal
     else:
         print("There are no more games to make prediction")
         return False, None
-
-
-
-
-

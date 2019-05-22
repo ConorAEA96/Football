@@ -9,6 +9,9 @@ from shutil import rmtree
 import sqlite3
 
 
+# 'cleanData' is taking the data that was imported from 'http://football-data.co.uk/'
+# and 'cleaning' the data so that only necessary factors are used for testing.
+
 # This function is used to make a directory.
 def make_directory(path):
     directory = os.path.dirname(path)
@@ -23,82 +26,72 @@ def rmv_dir(path):
 
 
 # This function is used to copy a file/folder.
-def copy_csv_file(from_path_a, to_path_b):
-
-    make_directory(to_path_b)
-
-    if os.path.isfile(from_path_a):
-        with open(to_path_b, 'w') as to_file, open(from_path_a, 'r') as from_file:
-
+def copy_csv(from_path, to_path):
+    make_directory(to_path)
+    if os.path.isfile(from_path):
+        with open(to_path, 'w') as to_file, open(from_path, 'r') as from_file:
             for line in from_file:
-
                 to_file.write(line)
-
-    elif os.path.isdir(from_path_a):
-        copy_tree(from_path_a, to_path_b)
+    elif os.path.isdir(from_path):
+        copy_tree(from_path, to_path)
     else:
-        raise ValueError("There was an error while copying the csv file.")
+        raise ValueError("Copy_CSV Error. File either does not exist, or is an unsupported file type")
 
 
-'''The original data will be cleaned by removing the columns not needed and storing the ones that are.'''
-# Parse data as time
-
-
-def clean(from_path_a, to_path_b, cols):
+# clean the original raw_data data by storing only the columns that we need, and removing the rest.
+def clean(from_path, to_path, columns):
     def convert_date(date):
         if date == '':
             return None
         else:
-            _, file = ntpath.split(to_path_b)
+            _, file = ntpath.split(to_path)
             if len(date.split('-')) == 3:
                 return date
             else:
                 return dt.strptime(date, '%d/%m/%y').date()
 
+    # The convert Score function will check to see if the score is 'Not a Number'(NaN).
+    # The latter part of this conditional statement will more than likely be used more.
     def convert_score(score):
         if math.isnan(score):
             return score
         else:
             return int(score)
 
-    data_frame = pd.read_csv(from_path_a, error_bad_lines=False)
-    data_frame = data_frame[cols]
-    data_frame = data_frame[pd.notnull(data_frame['Date'])]
+    df = pd.read_csv(from_path, error_bad_lines=False)
+    df = df[columns]
+    df = df[pd.notnull(df['Date'])]
 
-    data_frame['Date'] = data_frame['Date'].apply(convert_date)
-    data_frame['FTHG'] = data_frame['FTHG'].apply(convert_score)
-    data_frame['FTAG'] = data_frame['FTAG'].apply(convert_score)
+    df['FTHG'] = df['FTHG'].apply(convert_score)
+    df['FTAG'] = df['FTAG'].apply(convert_score)
+    df['Date'] = df['Date'].apply(convert_date)
 
-    head, _ = ntpath.split(to_path_b)
+    head, _ = ntpath.split(to_path)
     if not os.path.exists(head):
         os.makedirs(head)
-    data_frame.to_csv(to_path_b, index=False)
+    df.to_csv(to_path, index=False)
 
 
 # This function is cleaning the data in the raw_data folder from every year.
-def clean_everything(from_folder_a, to_folder_b, cols, from_year_start, to_year_end):
-
-    for years in range(from_year_start, to_year_end + 1):
-        csv_file = '{}-{}.csv'.format(years, years + 1)
-
-        from_path_1 = os.path.join(from_folder_a, csv_file)
-        to_path_2 = os.path.join(to_folder_b, csv_file)
-
-        print("Data cleaning", from_path_1, "...")
-        clean(from_path_1, to_path_2, cols)
+def clean_everything(from_folder, to_folder, columns, from_year, to_year):
+    for year in range(from_year, to_year + 1):
+        csv = '{}-{}.csv'.format(year, year + 1)
+        frompath = os.path.join(from_folder, csv)
+        topath = os.path.join(to_folder, csv)
+        print("Cleaning data", frompath, "...")
+        clean(frompath, topath, columns)
 
 
 # The years are then concatenated through this function.
-def combining_games(cleaned_folder_path, final_path, begin_year, end_year, make_file=True):
-
-    print("Retrieving matches played from {} to {}...".format(begin_year, end_year))
-    data_frame_list = []
-    for year in range(begin_year, end_year + 1):
+def combine_games(cleaned_folder_path, final_path, start_year, end_year, make_file=True):
+    print("Combining matches played from {} to {}...".format(start_year, end_year))
+    dfList = []
+    for year in range(start_year, end_year + 1):
         file = '{}-{}.csv'.format(year, year + 1)
         path = os.path.join(cleaned_folder_path, file)
-        data_frame = pd.read_csv(path)
-        data_frame_list.append(data_frame)
-    df = pd.concat(data_frame_list, ignore_index=True, sort=False)
+        df = pd.read_csv(path)
+        dfList.append(df)
+    df = pd.concat(dfList, ignore_index=True, sort=False)
     if make_file:
         df.to_csv(final_path, index=False)
     return df
@@ -115,19 +108,16 @@ def get_match_results_against(file_path, cleaned_folder_path, final_path, from_y
     for item in match_detail_columns:
         match_detail[item] = []
 
-    # Getting the results from head-to-head matches from_year to_year
-    df = combining_games(cleaned_folder_path, final_path, from_year, to_year, make_file=False)
+    # Get head-to-head result from fromYear to toYear
+    df = combine_games(cleaned_folder_path, final_path, from_year, to_year, make_file=False)
     for index, row in df.iterrows():
-
         home_team = row['HomeTeam']
         away_team = row['AwayTeam']
 
         if home_team not in team_detail:
             team_detail[home_team] = {}
-
         if away_team not in team_detail:
             team_detail[away_team] = {}
-
         if away_team not in team_detail[home_team]:
             team_detail[home_team][away_team] = {
                 'match_played': 0,
@@ -172,9 +162,9 @@ def remove_goal_scores(final_path):
 
 
 def save_new_data_to_database(database_path, final_data_file, prediction_results_file, standing_predictions_file,
-                              final_data_file_name='past_results',
-                              prediction_results_file_name='results_prediction',
-                              standing_predictions_file_name='table_standings_prediction'):
+                              final_data_file_name='previous_results',
+                              prediction_results_file_name='prediction_results',
+                              standing_predictions_file_name='prediction_rankings'):
     conn = sqlite3.connect(database_path)
 
     previous_results_df = pd.read_csv(final_data_file)
