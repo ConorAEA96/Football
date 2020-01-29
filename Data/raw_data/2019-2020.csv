@@ -1,0 +1,381 @@
+AwayTeam,Date,FTAG,FTHG,FTR,HomeTeam
+Norwich City,2019-08-09,1.0,4.0,H,Liverpool
+Man City,2019-08-10,5.0,0.0,A,West Ham
+Southampton,2019-08-10,0.0,3.0,H,Burnley
+Everton,2019-08-10,0.0,0.0,D,Crystal Palace
+Brighton,2019-08-10,3.0,0.0,A,Watford
+Sheffield,2019-08-10,1.0,1.0,D,Bournemouth
+Aston Villa,2019-08-10,1.0,3.0,H,Tottenham
+Wolves,2019-08-11,0.0,0.0,D,Leicester
+Arsenal,2019-08-11,1.0,0.0,A,Newcastle
+Chelsea,2019-08-11,0.0,4.0,H,Man United
+Burnley,2019-08-17,1.0,2.0,H,Arsenal
+Bournemouth,2019-08-17,2.0,1.0,A,Aston Villa
+Watford,2019-08-17,0.0,1.0,H,Everton
+Newcastle,2019-08-17,1.0,3.0,H,Norwich City
+Liverpool,2019-08-17,2.0,1.0,A,Southampton
+West Ham,2019-08-17,1.0,1.0,D,Brighton
+Tottenham,2019-08-17,2.0,2.0,D,Man City
+Crystal Palace,2019-08-18,0.0,1.0,H,Sheffield
+Leicester,2019-08-18,1.0,1.0,D,Chelsea
+Man United,2019-08-19,1.0,1.0,D,Wolves
+Everton,2019-08-23,0.0,2.0,H,Aston Villa
+Chelsea,2019-08-24,3.0,2.0,A,Norwich City
+Crystal Palace,2019-08-24,2.0,1.0,A,Man United
+Leicester,2019-08-24,2.0,1.0,A,Sheffield
+Southampton,2019-08-24,2.0,0.0,A,Brighton
+West Ham,2019-08-24,3.0,1.0,A,Watford
+Arsenal,2019-08-24,1.0,3.0,H,Liverpool
+Man City,2019-08-25,3.0,1.0,A,Bournemouth
+Burnley,2019-08-25,1.0,1.0,D,Wolves
+Newcastle,2019-08-25,1.0,0.0,A,Tottenham
+Man United,2019-08-31,1.0,1.0,D,Southampton
+Brighton,2019-08-31,0.0,4.0,H,Man City
+Watford,2019-08-31,1.0,1.0,D,Newcastle
+Sheffield,2019-08-31,2.0,2.0,D,Chelsea
+Bournemouth,2019-08-31,1.0,3.0,H,Leicester
+Norwich City,2019-08-31,0.0,2.0,H,West Ham
+Aston Villa,2019-08-31,0.0,1.0,H,Crystal Palace
+Liverpool,2019-08-31,3.0,0.0,A,Burnley
+Wolves,2019-09-01,2.0,3.0,H,Everton
+Tottenham,2019-09-01,2.0,2.0,D,Arsenal
+Newcastle,2019-09-14,1.0,3.0,H,Liverpool
+Chelsea,2019-09-14,5.0,2.0,A,Wolves
+Crystal Palace,2019-09-14,0.0,4.0,H,Tottenham
+Leicester,2019-09-14,0.0,1.0,H,Man United
+Southampton,2019-09-14,1.0,0.0,A,Sheffield
+Burnley,2019-09-14,1.0,1.0,D,Brighton
+Man City,2019-09-14,2.0,3.0,H,Norwich City
+Everton,2019-09-15,1.0,3.0,H,Bournemouth
+Arsenal,2019-09-15,2.0,2.0,D,Watford
+West Ham,2019-09-16,0.0,0.0,D,Aston Villa
+Bournemouth,2019-09-20,3.0,1.0,A,Southampton
+Tottenham,2019-09-21,1.0,2.0,H,Leicester
+Watford,2019-09-21,0.0,8.0,H,Man City
+Sheffield,2019-09-21,2.0,0.0,A,Everton
+Norwich City,2019-09-21,0.0,2.0,H,Burnley
+Brighton,2019-09-21,0.0,0.0,D,Newcastle
+Man United,2019-09-22,0.0,2.0,H,West Ham
+Wolves,2019-09-22,1.0,1.0,D,Crystal Palace
+Aston Villa,2019-09-22,2.0,3.0,H,Arsenal
+Liverpool,2019-09-22,2.0,1.0,A,Chelsea
+Liverpool,2019-09-28,1.0,0.0,A,Sheffield
+Watford,2019-09-28,0.0,2.0,H,Wolves
+Burnley,2019-09-28,2.0,2.0,D,Aston Villa
+Brighton,2019-09-28,0.0,2.0,H,Chelsea
+Southampton,2019-09-28,1.0,2.0,H,Tottenham
+Norwich City,2019-09-28,0.0,2.0,H,Crystal Palace
+West Ham,2019-09-28,2.0,2.0,D,Bournemouth
+Man City,2019-09-28,3.0,1.0,A,Everton
+Newcastle,2019-09-29,0.0,5.0,H,Leicester
+Arsenal,2019-09-30,1.0,1.0,D,Man United
+Tottenham,2019-10-05,0.0,3.0,H,Brighton
+Leicester,2019-10-05,1.0,2.0,H,Liverpool
+Aston Villa,2019-10-05,5.0,1.0,A,Norwich City
+Everton,2019-10-05,0.0,1.0,H,Burnley
+Sheffield,2019-10-05,0.0,0.0,D,Watford
+Crystal Palace,2019-10-05,2.0,1.0,A,West Ham
+Wolves,2019-10-06,2.0,0.0,A,Man City
+Bournemouth,2019-10-06,0.0,1.0,H,Arsenal
+Chelsea,2019-10-06,4.0,1.0,A,Southampton
+Man United,2019-10-06,0.0,1.0,H,Newcastle
+West Ham,2019-10-19,0.0,2.0,H,Everton
+Southampton,2019-10-19,1.0,1.0,D,Wolves
+Brighton,2019-10-19,1.0,2.0,H,Aston Villa
+Newcastle,2019-10-19,0.0,1.0,H,Chelsea
+Watford,2019-10-19,1.0,1.0,D,Tottenham
+Burnley,2019-10-19,1.0,2.0,H,Leicester
+Norwich City,2019-10-19,0.0,0.0,D,Bournemouth
+Man City,2019-10-19,2.0,0.0,A,Crystal Palace
+Liverpool,2019-10-20,1.0,1.0,D,Man United
+Arsenal,2019-10-21,0.0,1.0,H,Sheffield
+Leicester,2019-10-25,9.0,0.0,A,Southampton
+Aston Villa,2019-10-26,0.0,3.0,H,Man City
+Sheffield,2019-10-26,1.0,1.0,D,West Ham
+Everton,2019-10-26,2.0,3.0,H,Brighton
+Bournemouth,2019-10-26,0.0,0.0,D,Watford
+Chelsea,2019-10-26,4.0,2.0,A,Burnley
+Wolves,2019-10-27,1.0,1.0,D,Newcastle
+Tottenham,2019-10-27,1.0,2.0,H,Liverpool
+Crystal Palace,2019-10-27,2.0,2.0,D,Arsenal
+Man United,2019-10-27,3.0,1.0,A,Norwich City
+Man United,2019-11-02,0.0,1.0,H,Bournemouth
+Norwich City,2019-11-02,0.0,2.0,H,Brighton
+Liverpool,2019-11-02,2.0,1.0,A,Aston Villa
+Southampton,2019-11-02,1.0,2.0,H,Man City
+Wolves,2019-11-02,1.0,1.0,D,Arsenal
+Burnley,2019-11-02,0.0,3.0,H,Sheffield
+Newcastle,2019-11-02,3.0,2.0,A,West Ham
+Chelsea,2019-11-02,2.0,1.0,A,Watford
+Leicester,2019-11-03,2.0,0.0,A,Crystal Palace
+Tottenham,2019-11-03,1.0,1.0,D,Everton
+Watford,2019-11-08,2.0,0.0,A,Norwich City
+Crystal Palace,2019-11-09,0.0,2.0,H,Chelsea
+Bournemouth,2019-11-09,1.0,2.0,H,Newcastle
+Sheffield,2019-11-09,1.0,1.0,D,Tottenham
+West Ham,2019-11-09,0.0,3.0,H,Burnley
+Everton,2019-11-09,2.0,1.0,A,Southampton
+Arsenal,2019-11-09,0.0,2.0,H,Leicester
+Aston Villa,2019-11-10,1.0,2.0,H,Wolves
+Brighton,2019-11-10,1.0,3.0,H,Man United
+Man City,2019-11-10,1.0,3.0,H,Liverpool
+Tottenham,2019-11-23,3.0,2.0,A,West Ham
+Southampton,2019-11-23,2.0,2.0,D,Arsenal
+Norwich City,2019-11-23,2.0,0.0,A,Everton
+Liverpool,2019-11-23,2.0,1.0,A,Crystal Palace
+Leicester,2019-11-23,2.0,0.0,A,Brighton
+Burnley,2019-11-23,3.0,0.0,A,Watford
+Wolves,2019-11-23,2.0,1.0,A,Bournemouth
+Chelsea,2019-11-23,1.0,2.0,H,Man City
+Man United,2019-11-24,3.0,3.0,D,Sheffield
+Newcastle,2019-11-25,0.0,2.0,H,Aston Villa
+Man City,2019-11-30,2.0,2.0,D,Newcastle
+Brighton,2019-11-30,1.0,2.0,H,Liverpool
+West Ham,2019-11-30,1.0,0.0,A,Chelsea
+Bournemouth,2019-11-30,2.0,3.0,H,Tottenham
+Crystal Palace,2019-11-30,2.0,0.0,A,Burnley
+Watford,2019-11-30,1.0,2.0,H,Southampton
+Sheffield,2019-12-01,1.0,1.0,D,Wolves
+Arsenal,2019-12-01,2.0,2.0,D,Norwich City
+Aston Villa,2019-12-01,2.0,2.0,D,Man United
+Everton,2019-12-01,1.0,2.0,H,Leicester
+Bournemouth,2019-12-03,0.0,1.0,H,Crystal Palace
+Man City,2019-12-03,4.0,1.0,A,Burnley
+West Ham,2019-12-04,0.0,2.0,H,Wolves
+Tottenham,2019-12-04,1.0,2.0,H,Man United
+Watford,2019-12-04,0.0,2.0,H,Leicester
+Aston Villa,2019-12-04,1.0,2.0,H,Chelsea
+Norwich City,2019-12-04,1.0,2.0,H,Southampton
+Everton,2019-12-04,2.0,5.0,H,Liverpool
+Newcastle,2019-12-05,2.0,0.0,A,Sheffield
+Brighton,2019-12-05,2.0,1.0,A,Arsenal
+Chelsea,2019-12-07,1.0,3.0,H,Everton
+Burnley,2019-12-07,0.0,5.0,H,Tottenham
+Crystal Palace,2019-12-07,0.0,0.0,D,Watford
+Liverpool,2019-12-07,3.0,0.0,A,Bournemouth
+Man United,2019-12-07,2.0,1.0,A,Man City
+Leicester,2019-12-08,4.0,1.0,A,Aston Villa
+Southampton,2019-12-08,1.0,2.0,H,Newcastle
+Sheffield,2019-12-08,2.0,1.0,A,Norwich City
+Wolves,2019-12-08,2.0,2.0,D,Brighton
+Arsenal,2019-12-09,3.0,1.0,A,West Ham
+Watford,2019-12-14,0.0,2.0,H,Liverpool
+Bournemouth,2019-12-14,1.0,0.0,A,Chelsea
+Aston Villa,2019-12-14,0.0,2.0,H,Sheffield
+Norwich City,2019-12-14,1.0,1.0,D,Leicester
+Newcastle,2019-12-14,0.0,1.0,H,Burnley
+West Ham,2019-12-14,1.0,0.0,A,Southampton
+Tottenham,2019-12-15,2.0,1.0,A,Wolves
+Everton,2019-12-15,1.0,1.0,D,Man United
+Man City,2019-12-15,3.0,0.0,A,Arsenal
+Brighton,2019-12-16,1.0,1.0,D,Crystal Palace
+Arsenal,2019-12-21,0.0,0.0,D,Everton
+Southampton,2019-12-21,3.0,1.0,A,Aston Villa
+Crystal Palace,2019-12-21,0.0,1.0,H,Newcastle
+Wolves,2019-12-21,2.0,1.0,A,Norwich City
+Sheffield,2019-12-21,1.0,0.0,A,Brighton
+Burnley,2019-12-21,1.0,0.0,A,Bournemouth
+Leicester,2019-12-21,1.0,3.0,H,Man City
+Man United,2019-12-22,0.0,2.0,H,Watford
+Chelsea,2019-12-22,2.0,0.0,A,Tottenham
+Brighton,2019-12-26,1.0,2.0,H,Tottenham
+Norwich City,2019-12-26,0.0,1.0,H,Aston Villa
+Southampton,2019-12-26,2.0,0.0,A,Chelsea
+Burnley,2019-12-26,0.0,1.0,H,Everton
+Watford,2019-12-26,1.0,1.0,D,Sheffield
+West Ham,2019-12-26,1.0,2.0,H,Crystal Palace
+Arsenal,2019-12-26,1.0,1.0,D,Bournemouth
+Newcastle,2019-12-26,1.0,4.0,H,Man United
+Liverpool,2019-12-26,4.0,0.0,A,Leicester
+Man City,2019-12-27,2.0,3.0,H,Wolves
+Bournemouth,2019-12-28,0.0,2.0,H,Brighton
+Everton,2019-12-28,2.0,1.0,A,Newcastle
+Crystal Palace,2019-12-28,1.0,1.0,D,Southampton
+Aston Villa,2019-12-28,0.0,3.0,H,Watford
+Tottenham,2019-12-28,2.0,2.0,D,Norwich City
+Leicester,2019-12-28,2.0,1.0,A,West Ham
+Man United,2019-12-28,2.0,0.0,A,Burnley
+Chelsea,2019-12-29,2.0,1.0,A,Arsenal
+Wolves,2019-12-29,0.0,1.0,H,Liverpool
+Sheffield,2019-12-29,0.0,2.0,H,Man City
+Aston Villa,2020-01-01,2.0,1.0,A,Burnley
+Chelsea,2020-01-01,1.0,1.0,D,Brighton
+Leicester,2020-01-01,3.0,0.0,A,Newcastle
+Tottenham,2020-01-01,0.0,1.0,H,Southampton
+Wolves,2020-01-01,1.0,2.0,H,Watford
+Everton,2020-01-01,1.0,2.0,H,Man City
+Crystal Palace,2020-01-01,1.0,1.0,D,Norwich City
+Bournemouth,2020-01-01,0.0,4.0,H,West Ham
+Man United,2020-01-01,0.0,2.0,H,Arsenal
+Sheffield,2020-01-02,0.0,2.0,H,Liverpool
+West Ham,2020-01-10,0.0,1.0,H,Sheffield
+Arsenal,2020-01-11,1.0,1.0,D,Crystal Palace
+Newcastle,2020-01-11,1.0,1.0,D,Wolves
+Burnley,2020-01-11,0.0,3.0,H,Chelsea
+Brighton,2020-01-11,0.0,1.0,H,Everton
+Norwich City,2020-01-11,0.0,4.0,H,Man United
+Southampton,2020-01-11,2.0,1.0,A,Leicester
+Liverpool,2020-01-11,1.0,0.0,A,Tottenham
+Watford,2020-01-12,3.0,0.0,A,Bournemouth
+Man City,2020-01-12,6.0,1.0,A,Aston Villa
+Tottenham,2020-01-18,0.0,0.0,D,Watford
+Crystal Palace,2020-01-18,2.0,2.0,D,Man City
+Sheffield,2020-01-18,1.0,1.0,D,Arsenal
+Bournemouth,2020-01-18,0.0,1.0,H,Norwich City
+Everton,2020-01-18,1.0,1.0,D,West Ham
+Wolves,2020-01-18,3.0,2.0,A,Southampton
+Aston Villa,2020-01-18,1.0,1.0,D,Brighton
+Chelsea,2020-01-18,0.0,1.0,H,Newcastle
+Leicester,2020-01-19,1.0,2.0,H,Burnley
+Man United,2020-01-19,0.0,2.0,H,Liverpool
+Watford,2020-01-21,1.0,2.0,H,Aston Villa
+Newcastle,2020-01-21,2.0,2.0,D,Everton
+Man City,2020-01-21,1.0,0.0,A,Sheffield
+Brighton,2020-01-21,1.0,3.0,H,Bournemouth
+Southampton,2020-01-21,2.0,0.0,A,Crystal Palace
+Arsenal,2020-01-21,2.0,2.0,D,Chelsea
+West Ham,2020-01-22,1.0,4.0,H,Leicester
+Norwich City,2020-01-22,1.0,2.0,H,Tottenham
+Burnley,2020-01-22,2.0,0.0,A,Man United
+Liverpool,2020-01-23,2.0,1.0,A,Wolves
+Liverpool,2020-01-29,,,,West Ham
+Chelsea,2020-02-01,,,,Leicester
+Southampton,2020-02-01,,,,Liverpool
+Norwich City,2020-02-01,,,,Newcastle
+Brighton,2020-02-01,,,,West Ham
+Sheffield,2020-02-01,,,,Crystal Palace
+Everton,2020-02-01,,,,Watford
+Aston Villa,2020-02-01,,,,Bournemouth
+Wolves,2020-02-01,,,,Man United
+Arsenal,2020-02-02,,,,Burnley
+Man City,2020-02-02,,,,Tottenham
+Crystal Palace,2020-02-08,,,,Everton
+Watford,2020-02-08,,,,Brighton
+Bournemouth,2020-02-09,,,,Sheffield
+West Ham,2020-02-09,,,,Man City
+Leicester,2020-02-14,,,,Wolves
+Burnley,2020-02-15,,,,Southampton
+Liverpool,2020-02-15,,,,Norwich City
+Tottenham,2020-02-16,,,,Aston Villa
+Newcastle,2020-02-16,,,,Arsenal
+Man United,2020-02-17,,,,Chelsea
+Tottenham,2020-02-22,,,,Chelsea
+Brighton,2020-02-22,,,,Sheffield
+Bournemouth,2020-02-22,,,,Burnley
+Aston Villa,2020-02-22,,,,Southampton
+Newcastle,2020-02-22,,,,Crystal Palace
+Man City,2020-02-22,,,,Leicester
+Norwich City,2020-02-23,,,,Wolves
+Watford,2020-02-23,,,,Man United
+Everton,2020-02-23,,,,Arsenal
+West Ham,2020-02-24,,,,Liverpool
+Leicester,2020-02-28,,,,Norwich City
+Crystal Palace,2020-02-29,,,,Brighton
+Sheffield,2020-02-29,,,,Aston Villa
+Burnley,2020-02-29,,,,Newcastle
+Southampton,2020-02-29,,,,West Ham
+Chelsea,2020-02-29,,,,Bournemouth
+Liverpool,2020-02-29,,,,Watford
+Arsenal,2020-03-01,,,,Man City
+Wolves,2020-03-01,,,,Tottenham
+Man United,2020-03-01,,,,Everton
+Brighton,2020-03-07,,,,Wolves
+Bournemouth,2020-03-07,,,,Liverpool
+West Ham,2020-03-07,,,,Arsenal
+Everton,2020-03-07,,,,Chelsea
+Man City,2020-03-07,,,,Man United
+Norwich City,2020-03-07,,,,Sheffield
+Aston Villa,2020-03-07,,,,Leicester
+Tottenham,2020-03-07,,,,Burnley
+Newcastle,2020-03-07,,,,Southampton
+Watford,2020-03-07,,,,Crystal Palace
+Chelsea,2020-03-14,,,,Aston Villa
+Burnley,2020-03-14,,,,Man City
+Sheffield,2020-03-14,,,,Newcastle
+Man United,2020-03-14,,,,Tottenham
+Liverpool,2020-03-14,,,,Everton
+Southampton,2020-03-14,,,,Norwich City
+Wolves,2020-03-14,,,,West Ham
+Arsenal,2020-03-14,,,,Brighton
+Leicester,2020-03-14,,,,Watford
+Crystal Palace,2020-03-14,,,,Bournemouth
+Bournemouth,2020-03-21,,,,Wolves
+Crystal Palace,2020-03-21,,,,Liverpool
+Aston Villa,2020-03-21,,,,Newcastle
+Man City,2020-03-21,,,,Chelsea
+West Ham,2020-03-21,,,,Tottenham
+Sheffield,2020-03-21,,,,Man United
+Everton,2020-03-21,,,,Norwich City
+Brighton,2020-03-21,,,,Leicester
+Watford,2020-03-21,,,,Burnley
+Arsenal,2020-03-21,,,,Southampton
+Wolves,2020-04-04,,,,Aston Villa
+Liverpool,2020-04-04,,,,Man City
+Norwich City,2020-04-04,,,,Arsenal
+Leicester,2020-04-04,,,,Everton
+Tottenham,2020-04-04,,,,Sheffield
+Chelsea,2020-04-04,,,,West Ham
+Burnley,2020-04-04,,,,Crystal Palace
+Man United,2020-04-04,,,,Brighton
+Southampton,2020-04-04,,,,Watford
+Newcastle,2020-04-04,,,,Bournemouth
+Arsenal,2020-04-11,,,,Wolves
+Aston Villa,2020-04-11,,,,Liverpool
+West Ham,2020-04-11,,,,Newcastle
+Watford,2020-04-11,,,,Chelsea
+Everton,2020-04-11,,,,Tottenham
+Bournemouth,2020-04-11,,,,Man United
+Brighton,2020-04-11,,,,Norwich City
+Crystal Palace,2020-04-11,,,,Leicester
+Sheffield,2020-04-11,,,,Burnley
+Man City,2020-04-11,,,,Southampton
+Man United,2020-04-18,,,,Aston Villa
+Newcastle,2020-04-18,,,,Man City
+Leicester,2020-04-18,,,,Arsenal
+Southampton,2020-04-18,,,,Everton
+Wolves,2020-04-18,,,,Sheffield
+Burnley,2020-04-18,,,,West Ham
+Chelsea,2020-04-18,,,,Crystal Palace
+Liverpool,2020-04-18,,,,Brighton
+Norwich City,2020-04-18,,,,Watford
+Tottenham,2020-04-18,,,,Bournemouth
+Everton,2020-04-25,,,,Wolves
+Crystal Palace,2020-04-25,,,,Aston Villa
+Burnley,2020-04-25,,,,Liverpool
+Arsenal,2020-04-25,,,,Tottenham
+Southampton,2020-04-25,,,,Man United
+West Ham,2020-04-25,,,,Norwich City
+Chelsea,2020-04-25,,,,Sheffield
+Man City,2020-04-25,,,,Brighton
+Newcastle,2020-04-25,,,,Watford
+Leicester,2020-04-25,,,,Bournemouth
+Bournemouth,2020-05-02,,,,Man City
+Tottenham,2020-05-02,,,,Newcastle
+Liverpool,2020-05-02,,,,Arsenal
+Norwich City,2020-05-02,,,,Chelsea
+Aston Villa,2020-05-02,,,,Everton
+Sheffield,2020-05-02,,,,Leicester
+Wolves,2020-05-02,,,,Burnley
+Watford,2020-05-02,,,,West Ham
+Brighton,2020-05-02,,,,Southampton
+Man United,2020-05-02,,,,Crystal Palace
+Leicester,2020-05-09,,,,Tottenham
+West Ham,2020-05-09,,,,Man United
+Burnley,2020-05-09,,,,Norwich City
+Everton,2020-05-09,,,,Sheffield
+Newcastle,2020-05-09,,,,Brighton
+Man City,2020-05-09,,,,Watford
+Southampton,2020-05-09,,,,Bournemouth
+Crystal Palace,2020-05-09,,,,Wolves
+Arsenal,2020-05-09,,,,Aston Villa
+Chelsea,2020-05-09,,,,Liverpool
+Norwich City,2020-05-17,,,,Man City
+Liverpool,2020-05-17,,,,Newcastle
+Watford,2020-05-17,,,,Arsenal
+Wolves,2020-05-17,,,,Chelsea
+Bournemouth,2020-05-17,,,,Everton
+Man United,2020-05-17,,,,Leicester
+Brighton,2020-05-17,,,,Burnley
+Aston Villa,2020-05-17,,,,West Ham
+Sheffield,2020-05-17,,,,Southampton
+Tottenham,2020-05-17,,,,Crystal Palace
